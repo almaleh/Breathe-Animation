@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,52 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Breathe_Animation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDr-Ng-CLq" customClass="BreatheView" customModule="Breathe_Animation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgS-hv-J8v">
+                                <rect key="frame" x="37.5" y="523" width="300" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="HQs-67-ZqY"/>
+                                    <constraint firstAttribute="width" constant="300" id="SPR-Vb-EPF"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28p-CG-FJM">
+                                <rect key="frame" x="147.5" y="597" width="80" height="30"/>
+                                <state key="normal" title="Reset Color"/>
+                                <connections>
+                                    <action selector="resetColorTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zMW-dm-KDG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="28p-CG-FJM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0QT-iW-gf0"/>
+                            <constraint firstItem="xDr-Ng-CLq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="41C-Ui-eUW"/>
+                            <constraint firstItem="xDr-Ng-CLq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Q7P-f6-arx"/>
+                            <constraint firstItem="28p-CG-FJM" firstAttribute="top" secondItem="tgS-hv-J8v" secondAttribute="bottom" constant="30" id="TRd-3U-Tky"/>
+                            <constraint firstItem="xDr-Ng-CLq" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="amr-3q-VD4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="28p-CG-FJM" secondAttribute="bottom" constant="40" id="e64-8D-fSf"/>
+                            <constraint firstItem="xDr-Ng-CLq" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="mVM-aw-ME4"/>
+                            <constraint firstItem="tgS-hv-J8v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o82-Uh-BZU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="breatheView" destination="xDr-Ng-CLq" id="Toh-9G-K8A"/>
+                        <outlet property="colorPickerContainer" destination="tgS-hv-J8v" id="iuh-f2-2jx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="87" y="138"/>
         </scene>
     </scenes>
 </document>
